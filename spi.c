@@ -7,19 +7,19 @@ void spi_master(uint8_t mode){
     SSPCON1=0x30;
     switch(mode){
         case  0:
-            SSPSTAT &= ~(1<<6);
+            SSPSTAT |= 1<<6;
             SSPCON1 &= ~(1<<4);
             break;
         case  1:
-            SSPSTAT |= 1<<6;
+            SSPSTAT &= ~(1<<6);
             SSPCON1 &= ~(1<<4);
             break;
         case  2:
-            SSPSTAT &= ~(1<<6);
+            SSPSTAT |= 1<<6;
             SSPCON1 |= 1<<4;
             break;
         case  3:
-            SSPSTAT |= 1<<6;
+            SSPSTAT &= ~(1<<6);
             SSPCON1 |= 1<<4;
             break;
         default: break;
@@ -39,19 +39,19 @@ void spi_slave(uint8_t mode){
     SSPCON1=0x34;
     switch(mode){
         case  0:
-            SSPSTAT &= ~(1<<6);
+            SSPSTAT |= 1<<6;
             SSPCON1 &= ~(1<<4);
             break;
         case  1:
-            SSPSTAT |= 1<<6;
+            SSPSTAT &= ~(1<<6);
             SSPCON1 &= ~(1<<4);
             break;
         case  2:
-            SSPSTAT &= ~(1<<6);
+            SSPSTAT |= 1<<6;
             SSPCON1 |= 1<<4;
             break;
         case  3:
-            SSPSTAT |= 1<<6;
+            SSPSTAT &= ~(1<<6);
             SSPCON1 |= 1<<4;
             break;
         default: break;
