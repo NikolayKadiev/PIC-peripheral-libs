@@ -54,6 +54,7 @@ void i2c_write(uint8_t I2C_d)
   i2c_wait();
 }
 
+// Send device address
 void i2c_sendaddr(uint8_t adr){
     i2c_write(adr);
 }
