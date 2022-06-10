@@ -10,7 +10,7 @@ void i2c_master(const unsigned long I2C_c)
   SSPSTAT = 0x80;
   SSPCON1 = 0x28;            
   SSPCON2 = 0;
-  SSPADD = (_XTAL_FREQ/(4*I2C_c))-1; //Setting Clock.  Speed See datasheet
+  SSPADD = (_XTAL_FREQ/(4*I2C_c))-1; //Setting clock frequency. See datasheet
 }
 
 //For Waiting
