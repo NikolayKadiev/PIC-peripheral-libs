@@ -83,7 +83,7 @@ void lcd_shift(char x){
 
 //Send a string to LCD
 void lcd_sendstr(char str[]){
-	for (uint8_t ar = 0; str[ar] != '\0'; ar++){
+	for (uint8_t ar = 0; str[ar] != '\n'; ar++){
 		lcd_send(str[ar]);
 	}
 	return;
