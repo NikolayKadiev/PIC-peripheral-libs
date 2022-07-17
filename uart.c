@@ -22,17 +22,17 @@ char uart_read(void){
     return RCREG;
 }
 
-// Send a string
-void uart_sendstr(char x[]){
-	for(uint8_t i=0; x[i] != '\0'; i++){
-		uart_send(x[i]);
+// Send a line
+void uart_sendline(uint8_t *x, uint8_t len){
+	for(uint8_t i = 0; i < len; i++){
+		uart_send(*(x+i));
 	}
 }
 
-// Send a string and new line
-void uart_sendstrnl(char x[]){
-	for(uint8_t i=0; x[i] != '\0'; i++){
+// Send a string
+void uart_sendstr(uint8_t *x){
+	for(uint8_t i = 0; *(x + i) != '\n'; i++){
 		uart_send(x[i]);
 	}
-	uart_send('\n'); //('\r');
+	uart_send('\n');
 }
