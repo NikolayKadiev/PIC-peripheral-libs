@@ -1,3 +1,4 @@
+#include "clock_config.h"
 #include <xc.h>
 #include <stdint.h>
 
